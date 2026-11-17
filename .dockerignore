@@ -1,0 +1,9 @@
+# Python bytecode caches must never be baked into the submission image.
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+
+# Local experiment output that should never ship with the image.
+**/swanlog/
+**/wandb/
+**/*.swanlab/

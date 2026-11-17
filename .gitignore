@@ -1,0 +1,28 @@
+# Python
+.venv-platform/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# IDE
+.idea/
+
+# Local data, models, results, experiment logs and run state
+data/
+results/
+state/
+swanlog/
+
+# Submission artifacts (images, zips, checkpoints, installers)
+submission/
+*.tar
+*.zip
+*.npz
+*.msixbundle
+*.log
+
+# Official platform SDK and data packages (re-obtain from the platform)
+platform/
+
+# WSL installer
+wsl_install/

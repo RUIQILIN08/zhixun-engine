@@ -1,0 +1,5 @@
+numpy>=2.0
+
+# Final competition image also needs these after platform details are confirmed:
+# swanlab
+# requests or the official PyArrow client

@@ -1,0 +1,85 @@
+{
+  "harness": {
+    "sdk": "contest_harness",
+    "sdk_version": "1.0.2",
+    "protocol": "contest.harness.workspace.v2",
+    "model_access": "host_gateway_rpc",
+    "prompt_version": "industrial-workspace-flexible-v3"
+  },
+  "llm": {
+    "model_name": "Qwen/Qwen3.8-27B",
+    "source": "PyTRiO host gateway",
+    "api_key_policy": "API Key 只填写在平台密钥栏，不写入镜像、源码、文档或训练记录"
+  },
+  "tasks": {
+    "A": {
+      "task": "classification",
+      "dataset": "UCI Gas Sensor Array Drift Dataset",
+      "metric": "macro_f1",
+      "metric_direction": "higher",
+      "baseline_reproduction": {
+        "accuracy": 0.8786173633440515,
+        "macro_f1": 0.7140297220788709,
+        "validation_rows": 1244
+      }
+    },
+    "B": {
+      "task": "regression",
+      "dataset": "XJTU-SY Bearing Datasets",
+      "metric": "rmse",
+      "metric_direction": "lower",
+      "target_unit": "minutes",
+      "baseline_reproduction": {
+        "mae": 563.1058414514887,
+        "rmse": 681.1598326043112,
+        "validation_rows": 1679
+      }
+    },
+    "C": {
+      "task": "regression",
+      "dataset": "NASA C-MAPSS",
+      "metric": "rmse",
+      "metric_direction": "lower",
+      "target_unit": "cycles",
+      "baseline_reproduction": {
+        "mae": 38.899829826663556,
+        "rmse": 52.86857256611151,
+        "validation_rows": 23049
+      }
+    }
+  },
+  "industrial_models": {
+    "A": {
+      "hidden": 32,
+      "parameters": 4326,
+      "seed": 42,
+      "learning_rate": 0.003,
+      "batch_size": 128,
+      "epochs": 20
+    },
+    "B": {
+      "hidden": 24,
+      "parameters": 865,
+      "seed": 42,
+      "learning_rate": 0.003,
+      "batch_size": 128,
+      "epochs": 15
+    },
+    "C": {
+      "hidden": 32,
+      "parameters": 833,
+      "seed": 42,
+      "learning_rate": 0.002,
+      "batch_size": 256,
+      "epochs": 15
+    }
+  },
+  "resource_limits": {
+    "cpu_cores": 4,
+    "memory_gb": 8,
+    "gpu": false,
+    "image_size_limit_bytes": 2147483648
+  },
+  "note": "公开包内结果为 development_reference，不是平台正式成绩。"
+}
+
